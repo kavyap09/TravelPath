@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useState } from "react";
 import "./App.css";
 
-const API = "https://travel-path-psi.vercel.app/";
+const API = "https://travel-path-psi.vercel.app";
 
 function TravelGraph({ graphData, selected }) {
   const nodes = graphData?.nodes || [];
@@ -24,9 +24,7 @@ function TravelGraph({ graphData, selected }) {
     );
   }
 
-  const getNode = (id) => {
-    return nodes.find((node) => node.id === id);
-  };
+  const getNode = (id) => nodes.find((node) => node.id === id);
 
   const relatedConnections = [];
 
@@ -311,6 +309,7 @@ function App() {
         );
       } catch (error) {
         console.error("Destination error:", error);
+
         setError(
           "Could not connect to TravelPath server."
         );
@@ -498,7 +497,7 @@ function App() {
 
             {error && (
               <div className="error-message">
-                ⚠ {error}
+                {error}
               </div>
             )}
           </div>
