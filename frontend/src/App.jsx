@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useState } from "react";
 import "./App.css";
 
-const API = "http://localhost:5000";
+const API = "https://travel-path-psi.vercel.app/";
 
 function TravelGraph({ graphData, selected }) {
   const nodes = graphData?.nodes || [];
